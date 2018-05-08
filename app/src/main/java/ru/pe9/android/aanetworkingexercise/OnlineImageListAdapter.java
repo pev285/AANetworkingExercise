@@ -24,8 +24,6 @@ public class OnlineImageListAdapter extends RecyclerView.Adapter<OnlineImageList
 
             @Override
             public void onClick(View v) {
-//                Toast.makeText(v.getContext(), "Item clicked",  Toast.LENGTH_SHORT).show();
-
                 OnlineImageListItem imageListItem = (OnlineImageListItem)v.getTag();
 
                 SingleImageActivity.StartMe(v.getContext(), imageListItem);
@@ -54,13 +52,8 @@ public class OnlineImageListAdapter extends RecyclerView.Adapter<OnlineImageList
 
     private List<OnlineImageListItem> dataList = null;
 
-    public OnlineImageListAdapter() {
-//        this.dataList = new ArrayList<OnlineImageListItem>();
-    }
-
     public void SetData(List<OnlineImageListItem> list) {
         this.dataList = list;
-//        Log.w("23535", "Data list is set, size=" + dataList.size());
     }
 
 
@@ -70,14 +63,12 @@ public class OnlineImageListAdapter extends RecyclerView.Adapter<OnlineImageList
         LayoutInflater inflater = LayoutInflater.from(parent.getContext());
         View itemView = inflater.inflate(R.layout.list_item_layout, parent, false);
 
-//        Log.w("23535", "On Create View Holder");
         return new OnlineImageHolder(itemView);
     }
 
     @Override
     public void onBindViewHolder(@NonNull OnlineImageHolder holder, int position) {
         holder.bind(dataList.get(position));
-//        Log.w("23535", "Binding performed");
     }
 
     @Override
@@ -85,8 +76,6 @@ public class OnlineImageListAdapter extends RecyclerView.Adapter<OnlineImageList
         if (dataList == null) {
             return 0;
         }
-
-//        Log.w("23535", "Size requested = " + dataList.size());
         return dataList.size();
     }
 

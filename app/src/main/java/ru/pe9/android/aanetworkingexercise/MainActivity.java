@@ -56,13 +56,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         lastSearchRequest = savedInstanceState.getString(LAST_SEARCH_REQUEST_KEY);
 
         if (!lastSearchRequest.isEmpty()) {
-//            searchText.setText(lastSearchRequest);
             searchUsingRequest(lastSearchRequest);
         }
 
         searchText.setText(savedInstanceState.getString(SEARCH_STRING_KEY));
-
-//        Log.w("ERROR285", "Restored instance state");
     }
 
     @Override
@@ -98,7 +95,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
 
     private static IGiphyImagesSearchService giphySearchService = new GiphyNetworkModule().giphySearchService;
-    private Callback callback = new Callback<GiphySearchResponse>() {
+    private Callback<GiphySearchResponse> callback = new Callback<GiphySearchResponse>() {
         @Override
         public void onResponse(Call<GiphySearchResponse> call, Response<GiphySearchResponse> response) {
             if (!response.isSuccessful()) {

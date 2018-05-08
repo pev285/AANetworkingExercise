@@ -18,7 +18,7 @@ public class GiphyNetworkModule {
 
     private static HttpLoggingInterceptor logging = new HttpLoggingInterceptor().setLevel(HttpLoggingInterceptor.Level.BODY);
 
-    Interceptor apiKeyInterceptior = new Interceptor() {
+    Interceptor apiKeyInterceptor = new Interceptor() {
         @Override
         public Response intercept(Chain chain) throws IOException {
             Request originalRequest = chain.request();
@@ -34,7 +34,7 @@ public class GiphyNetworkModule {
         }
     }; // apiKeyInterceptor ///
 
-    Interceptor limitResultsNumberIntercepter = new Interceptor() {
+    Interceptor limitResultsNumberInterceptor = new Interceptor() {
         @Override
         public Response intercept(Chain chain) throws IOException {
             Request originalRequest = chain.request();
@@ -50,9 +50,10 @@ public class GiphyNetworkModule {
 
     private OkHttpClient.Builder httpClientBuilder = new OkHttpClient.Builder().connectTimeout(10, TimeUnit.SECONDS)
             .writeTimeout(30, TimeUnit.SECONDS).readTimeout(30,TimeUnit.SECONDS)
-            .addInterceptor(apiKeyInterceptior)
-            .addInterceptor(limitResultsNumberIntercepter)
-            .addInterceptor(logging).addNetworkInterceptor(logging);
+            .addInterceptor(apiKeyInterceptor)
+            .addInterceptor(limitResultsNumberInterceptor)
+            .addInterceptor(logging).addNetworkInterceptor(logging)
+            ;
 
     private Retrofit.Builder retrofitBuilder = new Retrofit.Builder().baseUrl(BASE_URL)
             .client(httpClientBuilder.build()).addConverterFactory(GsonConverterFactory.create());
