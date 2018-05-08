@@ -15,10 +15,7 @@ import com.squareup.picasso.Picasso;
 
 public class SingleImageActivity extends AppCompatActivity {
 
-//    private static final String IMAGE_ITEM_KEY = "IMAGE_ITEM_KEY";
-
     private OnlineImageListItem imageListItem = null;
-
 
     private ImageView mainImage = null;
     private TextView titleText = null;
@@ -68,4 +65,4 @@ public class SingleImageActivity extends AppCompatActivity {
     }
 
 
-}
+} // END OF CLASS ///

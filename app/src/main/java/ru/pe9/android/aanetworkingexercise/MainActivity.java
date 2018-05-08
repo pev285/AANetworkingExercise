@@ -68,8 +68,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         outState.putString(SEARCH_STRING_KEY, searchText.getText().toString());
         outState.putString(LAST_SEARCH_REQUEST_KEY, lastSearchRequest);
-
-//        Log.w("ERROR285", "Saved instance state");
     }
 
 
@@ -89,8 +87,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         recyclerView.setLayoutManager(layoutManager);
         recyclerView.setAdapter(listAdapter);
-
-        //hideKeyboard(searchButton);
     }
 
 
@@ -99,7 +95,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         @Override
         public void onResponse(Call<GiphySearchResponse> call, Response<GiphySearchResponse> response) {
             if (!response.isSuccessful()) {
-                statusText.setText("Request is unsuccessful, code:" + response.code());
+                statusText.setText("Server response is not good, code:" + response.code());
             }
             else {
                 statusText.setText("Request is successful, code:" + response.code());

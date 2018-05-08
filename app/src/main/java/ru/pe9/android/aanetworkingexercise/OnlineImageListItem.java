@@ -55,15 +55,13 @@ public class OnlineImageListItem {
         this.rating = item.rating;
         this.title = item.title;
 
-
-
         this.animatedImgSrc = item.images.original.url;
         this.stillImgSrc = item.images.image480w_still.url;
-
     }
 
     public OnlineImageListItem(String imgSrc) {
         this.stillImgSrc = imgSrc;
+        this.animatedImgSrc = imgSrc;
     }
 
     public String getStillImgSrc() {

@@ -44,8 +44,6 @@ public class OnlineImageListAdapter extends RecyclerView.Adapter<OnlineImageList
             itemView.setTag(item);
             itemView.setOnClickListener(OnListItemClickListener);
         }
-
-
     } // OnlineImageHolder ///
 
 
@@ -78,6 +76,5 @@ public class OnlineImageListAdapter extends RecyclerView.Adapter<OnlineImageList
         }
         return dataList.size();
     }
-
 
 } // end of class ///
