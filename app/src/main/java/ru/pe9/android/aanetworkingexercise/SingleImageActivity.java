@@ -50,7 +50,7 @@ public class SingleImageActivity extends AppCompatActivity {
         ratingText.setText(imageListItem.getRating());
 //        Picasso.get().load(imageListItem.getStillImgSrc()).placeholder(R.drawable.import_placeholder).into(mainImage);
 
-        Glide.with(mainImage.getContext()).load(imageListItem.getAnimatedImgSrc()).placeholder(R.drawable.import_placeholder).into(mainImage);
+        Glide.with(mainImage.getContext()).load(imageListItem.getAnimatedImgSrc())/*.placeholder(R.drawable.import_placeholder)*/.into(mainImage);
 
     } // onCreate() //
 
